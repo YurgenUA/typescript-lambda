@@ -1,0 +1,338 @@
+{
+  "data": {
+    "component": {
+      "schemaVersion": "0.2.4",
+      "creationTimeStamp": "2021-02-26T09:48:57.728Z",
+      "baselineComponentId": "392be304-dea0-5e6f-9257-56bff7ae2e5d",
+      "baselineComponentVersion": 1,
+      "sourcedComponentData": {
+        "id": "92f1fc3f-50bc-4c71-a2a7-3a1549754781",
+        "code": "A0454189",
+        "version": "2021-02-19T15:20:37.543Z",
+        "sourcingSystem": "TUIAccommodationSourcing"
+      },
+      "accommodationComponent": {
+        "names": [
+          {
+            "name": "TUI MAGIC LIFE Sharm El Sheikh",
+            "validDateBand": {
+              "startDate": "2020-01-01",
+              "endDate": "2030-01-01"
+            }
+          }
+        ],
+        "componentType": {
+          "id": "80f9c9b8-21cc-4e7f-9608-0b9bd9140f97",
+          "name": "Holiday Complex"
+        },
+        "officialClassifications": [
+          {
+            "id": "d04d55c4-822a-4e1b-952e-64189dfbd08b",
+            "value": 4,
+            "validDateBand": {
+              "startDate": "2020-01-01",
+              "endDate": "2030-01-01"
+            }
+          }
+        ],
+        "coordinates": {
+          "longitude": "34.42388",
+          "latitude": "27.973457"
+        },
+        "concepts": [
+          {
+            "id": "77eda6bc-f8e0-4019-bdff-c67cbea5403b",
+            "name": "TUI MAGIC LIFE",
+            "validDateBands": [
+              {
+                "startDate": "2020-01-01",
+                "endDate": "2030-01-01"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "units": [
+      {
+        "schemaVersion": "0.2.3",
+        "creationTimeStamp": "2021-02-26T09:49:01.291Z",
+        "updatedTimeStamp": "2021-02-27T09:49:01.291Z",
+        "baselineComponentId": "392be304-dea0-5e6f-9257-56bff7ae2e5d",
+        "baselineUnitId": "338fea8d-4de4-4ef2-87d6-b9aeeea7a901",
+        "baselineUnitVersion": 1,
+        "sourcedUnitData": {
+          "contracts": [
+            {
+              "contractedUnitId": "77bb5230-182f-48b7-9a95-6470a3734984",
+              "contractedUnitVersion": "2000-12-31T23:59:59Z",
+              "contractBusinessKey": "root_5uydvdzdf080",
+              "contractVersion": "0.1",
+              "contractStatus": "SIGNED",
+              "sourceMarkets": [
+                {
+                  "code": "BE",
+                  "brands": [
+                    "TUI_BE"
+                  ]
+                },
+                {
+                  "code": "NL",
+                  "brands": [
+                    "TUI_NL"
+                  ]
+                }
+              ],
+              "validDateBand": {
+                "startDate": "2021-12-23",
+                "endDate": "2022-01-14"
+              }
+            }
+          ],
+          "roomTypeId": "e5c0a426-612c-47db-b38c-7bf2cb1aa671",
+          "roomTypeName": "Double Bedroom, Balcony or Terrace, Interconnecting",
+          "roomTypeCode": "1DO-26",
+          "roomTypeVersion": "2021-02-26T09:49:01.291Z",
+          "sourcingCategory": "CONTRACTED",
+          "sourcingSystem": "TUIAccommodationSourcing",
+          "sourcedComponentId": "92f1fc3f-50bc-4c71-a2a7-3a1549754781",
+          "supplier": "TUI-WCR",
+          "subSupplier": "Proyecto 1818 F 173"
+        },
+        "accommodationUnit": {
+          "boardTypes": [
+            {
+              "id": "6321c59c-6251-4d61-a583-61de5ad46fe0",
+              "name": "full board",
+              "code": "6321c59c-6251-4d61-a583-61de5ad46fe0",
+              "isDefaultBoard": true,
+              "validDateBands": [
+                {
+                  "startDate": "2021-12-23",
+                  "endDate": "2022-01-14"
+                }
+              ]
+            }
+          ],
+          "occupancy": [
+            {
+              "maxPax": 4,
+              "minPax": 1,
+              "paxNom": 2,
+              "infantAllowance": "UP_TO",
+              "maxAdults": 4,
+              "minAdults": 0,
+              "maxChildren": 4,
+              "minChildren": 0,
+              "maxInfants": 0,
+              "minInfants": 0,
+              "validDateBand": {
+                "startDate": "2021-12-23",
+                "endDate": "2022-01-14"
+              }
+            }
+          ],
+          "roomType": {
+            "id": "0e804f21-1005-49b2-8d3a-a2c09bbcde2c",
+            "name": "Double Bedroom",
+            "code": "GT04-RO_ST04-DO",
+            "description": "Standard hotel-type room without any lounge or kitchen area designed to accommodate at least two occupants"
+          },
+          "stayConditions": [
+            {
+              "startDate": "2021-12-23",
+              "endDate": "2022-01-14"
+            }
+          ],
+          "stayDurationConditions": [
+            {
+              "stayDurationBands": [
+                {
+                  "from": 10,
+                  "to": 30
+                }
+              ]
+            }
+          ],
+          "arrivalWeekDays": [
+            {
+              "weekDays": [
+                "MONDAY"
+              ],
+              "validDateBand": {
+                "startDate": "2021-12-23",
+                "endDate": "2022-01-14"
+              }
+            }
+          ],
+          "departureWeekDays": [
+            {
+              "weekDays": [
+                "MONDAY"
+              ],
+              "validDateBand": {
+                "startDate": "2021-12-23",
+                "endDate": "2022-01-14"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "id": "ac0aefab-17a3-4bff-98ce-1158bb581199",
+              "code": "GT13-ADBU",
+              "type": "room-location-type",
+              "name": "adjoining building",
+              "description": "The room is situated in an adjoining building.",
+              "validDateBands": [
+                {
+                  "startDate": "2021-12-23",
+                  "endDate": "2022-01-14"
+                }
+              ]
+            },
+            {
+              "id": "3d084a4c-a372-4cd6-868a-746dcade6983",
+              "code": "GT05-SHOW",
+              "type": "bath-room-facility",
+              "name": "shower",
+              "description": "The bathroom features only a dedicated high-level shower unit",
+              "validDateBands": [
+                {
+                  "startDate": "2021-12-23",
+                  "endDate": "2022-01-14"
+                }
+              ]
+            },
+            {
+              "id": "62a8e5d2-dd72-4a79-a234-b95ce5cec546",
+              "code": "GT05-DOOR_ST05-CODO",
+              "type": "room-additional-space-features",
+              "name": "Interconnecting",
+              "description": "Room has lockable door to adjoining room.",
+              "validDateBands": [
+                {
+                  "startDate": "2021-12-23",
+                  "endDate": "2022-01-14"
+                }
+              ]
+            },
+            {
+              "id": "fc4f82de-cd09-47de-9968-6ad55f4c37b3",
+              "code": "STANDARD",
+              "type": "quality-type",
+              "name": "Standard",
+              "validDateBands": [
+                {
+                  "startDate": "2021-12-23",
+                  "endDate": "2022-01-14"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "geographies": [
+      {
+        "resort": {
+          "id": "ffa0f262-187d-4cb1-9622-4a4985068635",
+          "names": [
+            {
+              "name": "Playa De Jandia"
+            }
+          ]
+        },
+        "destination": {
+          "id": "c7d7a78b-ad4e-426e-93f8-84ec6206633f",
+          "names": [
+            {
+              "name": "Fuerteventura"
+            }
+          ]
+        },
+        "country": {
+          "id": "38b4459a-ae0c-4b6a-9d73-01a6ecb17780",
+          "names": [
+            {
+              "name": "Spain"
+            }
+          ],
+          "code": "ES"
+        },
+        "logicalLocations": [
+          {
+            "id": "45a1258d-0081-4ac7-83dd-6014cdb79630",
+            "name": "Canary Islands",
+            "locationLevel": "OVER_DESTINATIONS",
+            "locationType": "REGION"
+          }
+        ],
+        "isServedBy": [
+          {
+            "transportHubId": "50e61986-6265-4e75-83ba-0391d9fcf202",
+            "transportHubCode": "FUE",
+            "servedByType": "AIRPORT",
+            "sourceMarket": "BE",
+            "validDateBand": {
+              "fromDate": "2020-03-14",
+              "toDate": "2021-03-14"
+            }
+          },
+          {
+            "transportHubId": "50e61986-6265-4e75-83ba-0391d9fcf202",
+            "transportHubCode": "FUE",
+            "servedByType": "AIRPORT",
+            "sourceMarket": "NL",
+            "validDateBand": {
+              "fromDate": "2022-03-14",
+              "toDate": "2023-03-14"
+            }
+          },
+          {
+            "transportHubId": "cc2820f6-cb89-4e55-b3a9-db4657f9ee00",
+            "transportHubCode": "LWO",
+            "servedByType": "AIRPORT",
+            "sourceMarket": "BE",
+            "validDateBand": {
+              "fromDate": "2021-01-01",
+              "toDate": "2042-01-01"
+            }
+          },
+          {
+            "transportHubId": "9f2b272c-f4c0-4de5-b772-2c58e00ffbe3",
+            "transportHubCode": "KBP",
+            "servedByType": "AIRPORT",
+            "sourceMarket": "BE",
+            "validDateBand": {
+              "fromDate": "2021-01-01",
+              "toDate": "2042-01-01"
+            }
+          },
+          {
+            "transportHubId": "574bf689-2969-4501-a69f-ba43743c7565",
+            "transportHubCode": "IEV",
+            "servedByType": "AIRPORT",
+            "sourceMarket": "BE",
+            "validDateBand": {
+              "fromDate": "2021-01-01",
+              "toDate": "2042-01-01"
+            }
+          },
+          {
+            "transportHubId": "23c246a1-9284-41bf-bc92-0f2113b5269c",
+            "transportHubCode": "NLV",
+            "servedByType": "AIRPORT",
+            "sourceMarket": "BE",
+            "validDateBand": {
+              "fromDate": "2021-01-01",
+              "toDate": "2042-01-01"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "correlationId": "12345678-182f-48b7-9a95-6470a3734984"
+  }
+}

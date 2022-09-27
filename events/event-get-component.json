@@ -1,0 +1,13 @@
+{
+  "service": "product-saleable",
+  "body": {},
+  "method": "GET",
+  "stage": "dev",
+  "query": {},
+  "path": {
+      "id": "895705bb-9a0a-4f60-ba04-c915935e0000"
+  },
+ 
+  "stageVariables": {},
+  "requestPath": "/saleable/component/{id}"
+}

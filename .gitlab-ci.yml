@@ -1,0 +1,93 @@
+image: node:lts
+
+variables:
+  ARTIFACT_BUCKET: product-artifacts
+  TF_VERSION: 0.13.5
+  SERVICE: product
+  APPLICATION: ac-saleable
+  ENVIRONMENT: dev
+  REGION: eu-central-1
+  ARTIFACT_SUFFIX: ".zip"
+
+
+
+stages:
+  - install
+  - verify
+  - test
+  - package
+  - publish
+  - artifact_check
+  - infrastructure
+  - deployment_start_notification
+  - deploy
+  - deployment_end_notification
+  - integration-tests
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  untracked: true
+  paths:
+    - node_modules/
+
+install:
+  stage: install
+  extends: .install
+
+
+checkstyle:
+  stage: verify
+  script:
+    - npm run build
+    - npm run lint
+  tags:
+    - product
+  artifacts:
+    paths:
+      - src/model/generated
+  only:
+    variables:
+      - $ENVIRONMENT == "dev"
+
+test:
+  stage: test
+  services:
+    - docker:dind
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ""
+  script:
+    - npm run test
+  coverage: /Lines.*?(\d+.\d+\%)/
+  tags:
+    - product
+  only:
+    variables:
+      - $ENVIRONMENT == "dev"
+
+include:
+  # Packaging job (Node)
+  - project: 'trips/product/product-infrastructure'
+    file: '/gitlab-libs/node-package.yml'
+
+  # Publishing job (Node)
+  - project: 'trips/product/product-infrastructure'
+    file: '/gitlab-libs/node-publish.yml'
+
+  # Terraform jobs for dev/sit
+  - project: "trips/product/product-infrastructure"
+    file: "/gitlab-libs/infrastructure.yml"
+
+    # AWS Lambda function deploy jobs for dev/sit
+  - project: "trips/product/product-infrastructure"
+    file: "/gitlab-libs/deploy.yml"
+
+    # Integration tests jobs for dev/sit
+  - project: "trips/product/product-infrastructure"
+    file: "/gitlab-libs/integration-tests.yml"
+
+  # Check vulnerabilities
+  - project: "trips/product/product-infrastructure"
+    file: "/gitlab-libs/check-node-vulnerabilities.yml"
+

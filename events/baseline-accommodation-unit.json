@@ -1,0 +1,134 @@
+{
+  "schemaVersion": "0.2.0",
+  "creationTimeStamp": "2020-07-15T07:36:21",
+  "baselineUnitId": "635962e9-5dc9-4d10-bc3e-f2f51e7a2ce7",
+  "baselineUnitVersion": 1,
+  "baselineComponentId": "635962e9-5dc9-4d10-bc3e-f2f51e7a2ce7",
+  "sourcedUnitData": {
+    "contracts": [
+      {
+        "contractedUnitId": "DO-03-A0359287-12acabfb-4f61-44e3-815c-01a1fdc4263d",
+        "contractedUnitVersion": "1.0",
+        "contractBusinessKey": "wcrUnit-4RmJzqp7L5pK",
+        "contractVersion": "0.1",
+        "contractCode": "wcrUnit-4RmJzqp7L5pK"
+      }
+    ],
+    "roomTypeId": "83d696e5-bc64-4519-83bc-3bcf5e3eb060",
+    "roomTypeName": "Room with seaview",
+    "sourcingCategory": "CONTRACTED",
+    "sourcedComponentId": "TUI#WCR#e6d22edb-f0ea-4360-acf1-831b1853f9fa"
+  },
+  "accommodationUnit": {
+    "boardTypes": [
+      {
+        "id": "GT06-AI",
+        "code": "GT06-AI",
+        "name": "All Inclusive",
+        "validDateBands": [
+          {
+            "startDate": "2021-10-31",
+            "endDate": "2022-04-30"
+          }
+        ]
+      }
+    ],
+    "occupancy": [
+      {
+        "maxPax": 2,
+        "minPax": 2,
+        "paxNom": 2,
+        "infantAllowance": "OVER",
+        "maxAdults": 2,
+        "minAdults": 0,
+        "adultAgeBand": {
+          "maxAge": 99,
+          "minAge": 17
+        },
+        "maxChildren": 2,
+        "minChildren": 0,
+        "childAgeBand": {
+          "maxAge": 2,
+          "minAge": 16
+        },
+        "maxInfants": 2,
+        "minInfants": 0,
+        "infantAgeBand": {
+          "maxAge": 0,
+          "minAge": 1
+        },
+        "validDateBand": {
+          "startDate": "2021-10-31",
+          "endDate": "2022-04-30"
+        }
+      }
+    ],
+    "roomType": {
+      "id": "GT04-RO_ST04-DO",
+      "code": "GT04-RO_ST04-DO",
+      "name": "Double Bedroom",
+      "description": "Standard hotel-type room without any lounge or kitchen area designed to accommodate at least two occupants"
+    },
+    "attributes": [
+      {
+        "id": "GT13-SEVI",
+        "code": "GT13-SEVI",
+        "name": "Seaview",
+        "description": "Room looks out to sea",
+        "type": "roomviewtype",
+        "validDateBands": [
+          {
+            "startDate": "2021-10-31",
+            "endDate": "2022-04-30"
+          }
+        ]
+      },
+      {
+        "id": "GT05-SHOW",
+        "code": "GT05-SHOW",
+        "name": "Shower only",
+        "description": "room with shower",
+        "type": "bathroomtype",
+        "validDateBands": [
+          {
+            "startDate": "2021-10-31",
+            "endDate": "2022-04-30"
+          }
+        ]
+      }
+    ],
+    "stayConditions": [
+      {
+        "startDate": "2021-10-31",
+        "endDate": "2022-04-30"
+      }
+    ],
+    "stayDurationConditions": [
+      {
+        "atomicStayDurations": [
+          5,
+          7
+        ],
+        "defaultStayDuration": 7,
+        "validDateBand": {
+          "startDate": "2020-10-31",
+          "endDate": "2022-04-30"
+        }
+      }
+    ],
+    "arrivalWeekDays": [
+      {
+        "weekDays": [
+          "MONDAY"
+        ]
+      }
+    ],
+    "departureWeekDays": [
+      {
+        "weekDays": [
+          "TUESDAY"
+        ]
+      }
+    ]
+  }
+}

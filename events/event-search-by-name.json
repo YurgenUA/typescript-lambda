@@ -1,0 +1,15 @@
+{
+  "service": "product-saleable",
+  "body": {},
+  "method": "GET",
+  "principalId": "apigateway.amazonaws.com",
+  "stage": "dev",
+  "headers": {
+    "Authorization": "skelia"
+  },
+  "query": {
+    "name": "otel"
+  },
+  "path": {},
+  "requestPath": "/saleable/component/searchByName"
+}

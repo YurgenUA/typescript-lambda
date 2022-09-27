@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "0.2.0",
+  "creationTimeStamp": "2020-07-15T07:36:21Z",
+  "baselineComponentId": "dd15aedd-cf86-4427-8aec-e2f68bb7b672",
+  "baselineComponentVersion": 1,
+  "sourcedComponentData": {
+    "id": "TUI#WCR#e6d22edb-f0ea-4360-acf1-831b1853f9fa",
+    "code": "A0359287",
+    "sourcingSystem": "TUIAccommodationSourcing"
+  },
+  "accommodationComponent": {
+    "names": [
+      {
+        "name": "ROBINSON CLUB AGADIR",
+        "validDateBand": {
+          "startDate": "2020-10-31",
+          "endDate": "2022-04-30"
+        }
+      }
+    ],
+    "componentType": {
+      "id": "438e15bc-7ccf-4350-a783-c7976dfe2c9f",
+      "name": "Hotel"
+    },
+    "officialClassifications": [
+      {
+        "id": "29f327a2-6b40-4d4a-994d-d608cde1421a",
+        "value": 5,
+        "validDateBand": {
+          "startDate": "2020-10-31",
+          "endDate": "2022-04-30"
+        }
+      }
+    ],
+    "attributes": [
+      {
+        "id": "GT08-WELL_ST08-SPAA_CT08-DOD-ACCESS",
+        "code": "GT08-WELL_ST08-SPAA_CT08-DOD-ACCESS",
+        "name": "Spa Access",
+        "type": "spa",
+        "validDateBands": [
+          {
+            "startDate": "2021-10-31",
+            "endDate": "2022-04-30"
+          }
+        ]
+      },
+      {
+        "id": "GT08-ACSP_ST08-CAPA",
+        "code": "GT08-ACSP_ST08-CAPA",
+        "name": "Parking lot",
+        "type": "parking",
+        "validDateBands": [
+          {
+            "startDate": "2021-10-31",
+            "endDate": "2022-04-30"
+          }
+        ]
+      }
+    ]
+  }
+}

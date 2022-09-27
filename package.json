@@ -1,0 +1,47 @@
+{
+  "name": "ac-saleable",
+  "description": "Creates accommodation saleable components and units",
+  "scripts": {
+    "lint": "eslint src test --ext .ts",
+    "package": "npm run clean && npm run build && node-lambda package --packageDirectory build --excludeGlobs '.idea src test coverage terraform *.js.map'",
+    "clean": "",
+    "build": "npm run generate && tsc -p tsconfig.json",
+    "dev": "npx build -w",
+    "test": "jest --coverage --runInBand --silent",
+    "test:integrations": "jest test/integrations --runInBand --collectCoverage=false",
+    "test:watch": "npm run test -- --watchAll",
+    "generate": "node json-to-ts.js ./schema ./src/model/generated"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "dependencies": {
+    "ajv": "^6.12.6",
+    "aws-xray-sdk-core": "^3.2.0",
+    "lodash": "^4.17.20",
+    "mongodb": "^3.5.9",
+    "uuid": "^8.2.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@trips/eslint-config-product": "0.0.10",
+    "@types/aws-lambda": "^8.10.57",
+    "@types/mongodb": "^3.6.10",
+    "@types/jest": "^26.0.4",
+    "@types/node": "^14.0.14",
+    "aws-sdk": "^2.704.0",
+    "husky": "^4.2.5",
+    "jest": "^26.1.0",
+    "json-schema-to-typescript": "^9.1.1",
+    "mockdate": "^3.0.2",
+    "node-lambda": "^0.18.0",
+    "testcontainers": "^7.7.0",
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.9.5"
+  },
+  "resolutions": {
+    "pac-resolver": "^4.2.0"
+  }
+}

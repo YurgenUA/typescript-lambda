@@ -1,0 +1,639 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Accommodation saleable component schema",
+  "title": "AccommodationSaleableComponent",
+  "javaType": "tui.product.function.model.saleable.accommodation.component.AccommodationSaleableComponent",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "description": "Schema version this event is validated against.",
+      "type": "string",
+      "const": "0.2.6"
+    },
+    "creationTimeStamp": {
+      "description": "Date and time for when the first version of this object was created.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedTimeStamp": {
+      "description": "Date and time for when the entity was updated.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "retiredTimeStamp": {
+      "description": "Date and time for when the entity was retired.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "saleableComponentId": {
+      "description": "The public id of this component.",
+      "type": "string"
+    },
+    "saleableComponentVersion": {
+      "description": "The public version of this particular object.",
+      "type": "number"
+    },
+    "baselineComponentId": {
+      "description": "Reference to the baseline component this object is based on.",
+      "type": "string"
+    },
+    "username": {
+      "description": "Name of user, who created given entity.",
+      "type": "string"
+    },
+    "entityStatus": {
+      "description": "Indicates this entity's status. INACTIVE used for example when this entity is to be taken of sale but only dormant, not retired.",
+      "type": "string",
+      "enum": [
+        "ACTIVE",
+        "INACTIVE",
+        "RETIRED"
+      ]
+    },
+    "inactiveReason": {
+      "description": "Stores list of inactivation reasons. Once all of them removed - should become active.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "description": "Single inactivation reason"
+      }
+    },
+    "sourcedComponentData": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Accommodation ID as defined by Sourcing (DOD).",
+          "type": "string"
+        },
+        "code": {
+          "description": "Accommodation Code as defined by Sourcing (DOD).",
+          "type": "string"
+        },
+        "sourcingSystem": {
+          "description": "Sourcing system providing the data to Product Service.",
+          "type": "string"
+        },
+        "suppliers": {
+          "description": "Lists the suppliers that provides this component.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "supplierName": {
+                "description": "Name of the supplier.",
+                "type": "string"
+              },
+              "supplierCode": {
+                "description": "Short code for the supplier.",
+                "type": "string"
+              },
+              "supplierComponentCode": {
+                "description": "The identifier of this accommodation according to supplier (bedbank etc).",
+                "type": "string"
+              }
+            },
+            "required": [
+              "supplierName",
+              "supplierCode",
+              "supplierComponentCode"
+            ]
+          }
+        }
+      },
+      "required": [
+        "id",
+        "code"
+      ],
+      "additionalProperties": false
+    },
+    "accommodationComponent": {
+      "type": "object",
+      "properties": {
+        "componentType": {
+          "description": "The type of component. E.g. Villa, Hotel, Bungalow village etc.",
+          "type": "object",
+          "properties": {
+            "id": {
+              "description": "Id of the component type (from DOD).",
+              "type": "string"
+            },
+            "name": {
+              "description": "Name of the component type (from DOD).",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "additionalProperties": false
+        },
+        "names": {
+          "description": "Name or names of the accommodation by date band as set by product. Date periods can go beyond specific product travel period and is then restricted by the products travel period when applied for that product.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "Name of the accommodation as set by product.",
+                "type": "string"
+              },
+              "validDateBand": {
+                "$ref": "#/definitions/dateBand"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "coordinates": {
+          "type": "object",
+          "properties": {
+            "longitude": {
+              "type": "string"
+            },
+            "latitude": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "longitude",
+            "latitude"
+          ],
+          "additionalProperties": false
+        },
+        "chains": {
+          "description": "Used to indicate if the accommodation is part of a hotel chain. With date bands to allow chain change. Date periods can go beyond specific product travel period and is then restricted by the products travel period when applied for that product.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "description": "Id of this entity (from DOD).",
+                "type": "string"
+              },
+              "name": {
+                "description": "The name of the entity instance.",
+                "type": "string"
+              },
+              "validDateBand": {
+                "$ref": "#/definitions/dateBand"
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "geographies": {
+          "description": "Placeholder for the geography the product and configuration belongs to.",
+          "type": "object",
+          "properties": {
+            "structuralLocations": {
+              "description": "Structural locations sets with valid date bands for component.",
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/definitions/geography"
+              }
+            },
+            "logicalLocations": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "properties": {
+                  "id": {
+                    "description": "The public id of the particular object.",
+                    "type": "string"
+                  },
+                  "name": {
+                    "description": "The name of the entity instance.",
+                    "type": "string"
+                  },
+                  "locationType": {
+                    "description": "Type of logical location",
+                    "type": "string",
+                    "enum": [
+                      "REGION",
+                      "CONTINENT",
+                      "INTERNATIONAL_REGION",
+                      "NATIONAL_REGION",
+                      "MAIN_SAILING_AREA",
+                      "SAILING_AREA",
+                      "RIVER_CRUISE_AREA",
+                      "SKI_AREA"
+                    ]
+                  },
+                  "locationLevel": {
+                    "description": "Identifies the level of this logical location as it is not strictly defined as for structural locations. I.e. is this logical location on resort, destination, country level or balow/inbetween/above theses. Enumerations to be discussed.",
+                    "type": "string",
+                    "enum": [
+                      "OVER_COUNTRIES",
+                      "COUNTRY",
+                      "OVER_DESTINATIONS",
+                      "DESTINATION",
+                      "SUB_DESTINATION",
+                      "RESORT",
+                      "SUB_RESORT"
+                    ]
+                  },
+                  "validDateBand": {
+                    "$ref": "#/definitions/dateBand"
+                  }
+                },
+                "required": [
+                  "id"
+                ]
+              }
+            },
+            "isServedBy": {
+              "description": "Lists transport hubs that serves this location. This is defined per source market.",
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "transportHubId": {
+                    "description": "Id of the transport hub.",
+                    "type": "string"
+                  },
+                  "transportHubCode": {
+                    "description": "Code of the transport hub if any (if airport this is IATA code and required).",
+                    "type": "string"
+                  },
+                  "transportHubType": {
+                    "description": "Type of transport hub.",
+                    "type": "string",
+                    "enum": [
+                      "AIRPORT",
+                      "PORT",
+                      "TRAINSTATION",
+                      "BUSSTATION"
+                    ]
+                  },
+                  "sourceMarket": {
+                    "description": "Source Market this relation is valid for.",
+                    "type": "string"
+                  },
+                  "validDateBand": {
+                    "$ref": "#/definitions/dateBand"
+                  }
+                },
+                "required": [
+                  "transportHubId"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "structuralLocations"
+          ],
+          "additionalProperties": false
+        },
+        "officialClassifications": {
+          "description": "Official classification (rating). Not touched by product. Example: 3.5 representing three and a half star. With date bands to allow classification change. Date periods can go beyond specific product travel period and is then restrictid by the products travel period when applied for that product. ",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/classification"
+          }
+        },
+        "sourceMarketClassifications": {
+          "description": "The overall classification of the product during the period as defined in Product Service for the source markets for which this component is defined. Example: 3.5 representing TTT+. With date bands to allow classification change. Date periods can go beyond specific product travel period and is then restrictid by the products travel period when applied for that product. ",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/classification"
+          }
+        },
+        "labels": {
+          "description": "Placeholder for labels applicable for the component including any constraints. There can only be one valid in a particular point in time.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "description": "The public id of the particular object.",
+                "type": "string"
+              },
+              "name": {
+                "description": "The name of the entity instance.",
+                "type": "string"
+              },
+              "validDateBands": {
+                "description": "Valid date bands for this entity. Date periods can go beyond specific product travel period and is then restricted by the products travel period when applied for that product.",
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/definitions/dateBand"
+                }
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "concepts": {
+          "description": "Placeholder for concepts applicable for the component including any constraints. There can only be one valid in a particular point in time.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "description": "The public id of the particular object.",
+                "type": "string"
+              },
+              "code": {
+                "description": "The code for the particular object.",
+                "type": "string"
+              },
+              "name": {
+                "description": "The name of the entity instance.",
+                "type": "string"
+              },
+              "validDateBands": {
+                "description": "Valid date bands for this entity. Date periods can go beyond specific product travel period and is then restricted by the products travel period when applied for that product.",
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "startDate": {
+                      "description": "The date from which this is valid.",
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "endDate": {
+                      "description": "The date to which this is valid.",
+                      "type": "string",
+                      "format": "date"
+                    }
+                  },
+                  "required": [
+                    "startDate",
+                    "endDate"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "id",
+              "validDateBands"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "attributes": {
+          "description": "Attributes for this specific component.",
+          "type": "array",
+          "minItems": 0,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "description": "DoD id for this attribute.",
+                "type": "string"
+              },
+              "code": {
+                "description": "DOD code for this attribute.",
+                "type": "string"
+              },
+              "name": {
+                "description": "Name of the attribute. Default from DOD but can be overridden by product service.",
+                "type": "string"
+              },
+              "description": {
+                "description": "Description for this attribute as defined by DOD. Can be overridden by Product Service.",
+                "type": "string"
+              },
+              "type": {
+                "description": "The attribute type as defined by DOD.",
+                "type": "string"
+              },
+              "subType": {
+                "description": "The attribute subType as defined by DOD.",
+                "type": "string"
+              },
+              "validDateBands": {
+                "description": "Valid date bands for this entity. Date periods can go beyond specific product travel period and is then restricted by the products travel period when applied for that product.",
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/definitions/dateBand"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "type"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "transportRestrictions": {
+          "description": "Defines latest arrival and/or earliest departure to/from transport hub. This for example to be able to match ferry or similar.",
+          "type": "object",
+          "minProperties": 1,
+          "properties": {
+            "latestArrivalToTransportHub": {
+              "description": "Latest arrival time of day for transport arriving at transport hub. E.g. latest arrival time for a flight to arrive at airport to be able to fetch ferry or similar.",
+              "type": "string",
+              "format": "time"
+            },
+            "earliestDepartureFromTransportHub": {
+              "description": "Earliest departure time of day for transport departing from transport hub. E.g. earliest departure time for a flight to departure from  airport to be able to match first ferry of the day or similar.",
+              "type": "string",
+              "format": "time"
+            }
+          }
+        }
+      },
+      "required": [
+        "componentType",
+        "names",
+        "officialClassifications",
+        "sourceMarketClassifications"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "creationTimeStamp",
+    "saleableComponentId",
+    "saleableComponentVersion",
+    "baselineComponentId",
+    "entityStatus",
+    "sourcedComponentData",
+    "accommodationComponent"
+  ],
+  "if": {
+    "properties": {
+      "entityStatus": {
+        "const": "ACTIVE"
+      }
+    }
+  },
+  "then": {
+    "properties": {
+      "accommodationComponent": {
+        "required": [
+          "geographies"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "dateBand": {
+      "description": "Date limits or period this entity is valid for. Can be just a start date or just an end date or both. If omitted the product for the specific use sets the date rules.",
+      "type": "object",
+      "minProperties": 1,
+      "properties": {
+        "startDate": {
+          "description": "The date from which this is valid.",
+          "type": "string",
+          "format": "date"
+        },
+        "endDate": {
+          "description": "The date to which this is valid.",
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "additionalProperties": false
+    },
+    "classification": {
+      "description": "A classification (rating) which can be defined for a specific date period or with dates omitted if the classification (max 1) have not current end date.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Id of this entity (from DOD).",
+          "type": "string"
+        },
+        "value": {
+          "description": "The value of the entity instance. Example: 3.5 representing three and a half star or TTT+.",
+          "type": "number"
+        },
+        "validDateBand": {
+          "$ref": "#/definitions/dateBand"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "geography": {
+      "description": "Placeholder for the geography the product and configuration belongs to.",
+      "type": "object",
+      "properties": {
+        "country": {
+          "description": "Country Id and name as defined in the selling geography.",
+          "type": "object",
+          "properties": {
+            "id": {
+              "description": "The public id of the particular object.",
+              "type": "string"
+            },
+            "code": {
+              "description": "ISO code for country two chars.",
+              "type": "string"
+            },
+            "names": {
+              "$ref": "#/definitions/locationNames"
+            }
+          },
+          "required": [
+            "id",
+            "code"
+          ],
+          "additionalProperties": false
+        },
+        "destination": {
+          "description": "Destination Id and name as defined in the selling geography.",
+          "type": "object",
+          "properties": {
+            "id": {
+              "description": "The public id of the particular object.",
+              "type": "string"
+            },
+            "code": {
+              "description": "Destination code if any",
+              "type": "string"
+            },
+            "names": {
+              "$ref": "#/definitions/locationNames"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "additionalProperties": false
+        },
+        "resort": {
+          "description": "Resort Id and name as defined in the selling geography.",
+          "type": "object",
+          "properties": {
+            "id": {
+              "description": "The public id of the particular object.",
+              "type": "string"
+            },
+            "code": {
+              "description": "Resort code if any",
+              "type": "string"
+            },
+            "names": {
+              "$ref": "#/definitions/locationNames"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "additionalProperties": false
+        },
+        "validDateBand": {
+          "$ref": "#/definitions/dateBand"
+        }
+      },
+      "required": [
+        "country",
+        "destination",
+        "resort"
+      ],
+      "additionalProperties": false
+    },
+    "locationNames": {
+      "description": "List of location names, min 1, and the date range when the name is valid. Data range can be omitted when only one Item which would then be valid when the location is valid.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "The name of the location in English. Translations of the name is the responsibility of Content Service. ",
+            "type": "string"
+          },
+          "validDateBand": {
+            "$ref": "#/definitions/dateBand"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

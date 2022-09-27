@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mapping tests component should pass validation 1`] = `
+Object {
+  "accommodationComponent": Object {
+    "componentType": Object {
+      "id": "80f9c9b8-21cc-4e7f-9608-0b9bd9140f97",
+      "name": "Holiday Complex",
+    },
+    "concepts": Array [
+      Object {
+        "id": "77eda6bc-f8e0-4019-bdff-c67cbea5403b",
+        "name": "TUI MAGIC LIFE",
+        "validDateBands": Array [
+          Object {
+            "endDate": "2030-01-01",
+            "startDate": "2020-01-01",
+          },
+        ],
+      },
+    ],
+    "coordinates": Object {
+      "latitude": "27.973457",
+      "longitude": "34.42388",
+    },
+    "geographies": Object {
+      "isServedBy": Array [
+        Object {
+          "sourceMarket": "BE",
+          "transportHubCode": "FUE",
+          "transportHubId": "50e61986-6265-4e75-83ba-0391d9fcf202",
+          "transportHubType": "AIRPORT",
+          "validDateBand": Object {
+            "endDate": "2021-03-14",
+            "startDate": "2020-03-14",
+          },
+        },
+        Object {
+          "sourceMarket": "NL",
+          "transportHubCode": "FUE",
+          "transportHubId": "50e61986-6265-4e75-83ba-0391d9fcf202",
+          "transportHubType": "AIRPORT",
+          "validDateBand": Object {
+            "endDate": "2023-03-14",
+            "startDate": "2022-03-14",
+          },
+        },
+        Object {
+          "sourceMarket": "BE",
+          "transportHubCode": "LWO",
+          "transportHubId": "cc2820f6-cb89-4e55-b3a9-db4657f9ee00",
+          "transportHubType": "AIRPORT",
+          "validDateBand": Object {
+            "endDate": "2042-01-01",
+            "startDate": "2021-01-01",
+          },
+        },
+        Object {
+          "sourceMarket": "BE",
+          "transportHubCode": "KBP",
+          "transportHubId": "9f2b272c-f4c0-4de5-b772-2c58e00ffbe3",
+          "transportHubType": "AIRPORT",
+          "validDateBand": Object {
+            "endDate": "2042-01-01",
+            "startDate": "2021-01-01",
+          },
+        },
+        Object {
+          "sourceMarket": "BE",
+          "transportHubCode": "IEV",
+          "transportHubId": "574bf689-2969-4501-a69f-ba43743c7565",
+          "transportHubType": "AIRPORT",
+          "validDateBand": Object {
+            "endDate": "2042-01-01",
+            "startDate": "2021-01-01",
+          },
+        },
+        Object {
+          "sourceMarket": "BE",
+          "transportHubCode": "NLV",
+          "transportHubId": "23c246a1-9284-41bf-bc92-0f2113b5269c",
+          "transportHubType": "AIRPORT",
+          "validDateBand": Object {
+            "endDate": "2042-01-01",
+            "startDate": "2021-01-01",
+          },
+        },
+      ],
+      "logicalLocations": Array [
+        Object {
+          "id": "45a1258d-0081-4ac7-83dd-6014cdb79630",
+          "locationLevel": "OVER_DESTINATIONS",
+          "locationType": "REGION",
+          "name": "Canary Islands",
+        },
+      ],
+      "structuralLocations": Array [
+        Object {
+          "country": Object {
+            "code": "ES",
+            "id": "38b4459a-ae0c-4b6a-9d73-01a6ecb17780",
+            "names": Array [
+              Object {
+                "name": "Spain",
+              },
+            ],
+          },
+          "destination": Object {
+            "id": "c7d7a78b-ad4e-426e-93f8-84ec6206633f",
+            "names": Array [
+              Object {
+                "name": "Fuerteventura",
+              },
+            ],
+          },
+          "resort": Object {
+            "id": "ffa0f262-187d-4cb1-9622-4a4985068635",
+            "names": Array [
+              Object {
+                "name": "Playa De Jandia",
+              },
+            ],
+          },
+        },
+      ],
+    },
+    "names": Array [
+      Object {
+        "name": "TUI MAGIC LIFE Sharm El Sheikh",
+        "validDateBand": Object {
+          "endDate": "2030-01-01",
+          "startDate": "2020-01-01",
+        },
+      },
+    ],
+    "officialClassifications": Array [
+      Object {
+        "id": "d04d55c4-822a-4e1b-952e-64189dfbd08b",
+        "validDateBand": Object {
+          "endDate": "2030-01-01",
+          "startDate": "2020-01-01",
+        },
+        "value": 4,
+      },
+    ],
+    "sourceMarketClassifications": Array [
+      Object {
+        "id": "d04d55c4-822a-4e1b-952e-64189dfbd08b",
+        "validDateBand": Object {
+          "endDate": "2030-01-01",
+          "startDate": "2020-01-01",
+        },
+        "value": 4,
+      },
+    ],
+  },
+  "baselineComponentId": "392be304-dea0-5e6f-9257-56bff7ae2e5d",
+  "creationTimeStamp": 2021-02-26T10:25:11.801Z,
+  "entityStatus": "ACTIVE",
+  "saleableComponentId": "91363994-df46-489e-8915-e395e28283b6",
+  "saleableComponentVersion": 1,
+  "schemaVersion": "0.2.6",
+  "sourcedComponentData": Object {
+    "code": "A0454189",
+    "id": "92f1fc3f-50bc-4c71-a2a7-3a1549754781",
+    "sourcingSystem": "TUIAccommodationSourcing",
+  },
+  "updatedTimeStamp": 2021-02-26T10:25:11.801Z,
+  "username": "Automatic",
+}
+`;
